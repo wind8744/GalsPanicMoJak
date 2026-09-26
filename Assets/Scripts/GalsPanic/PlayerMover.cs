@@ -73,9 +73,10 @@ namespace GalsPanic
             if (_board != null) transform.position = _board.CellToWorld(GridPos);
         }
 
-        /// <summary>목숨을 잃었을 때: 궤적을 지우고 궤적 시작점으로 돌아갑니다.</summary>
+        /// <summary>목숨을 잃었을 때: 그리는 중이었다면 궤적을 지우고 궤적 시작점으로 돌아갑니다. 아니면 제자리에 있습니다.</summary>
         public void Die()
         {
+            if (!Drawing) return;
             _board.ClearTrail(Trail);
             Trail.Clear();
             Drawing = false;
