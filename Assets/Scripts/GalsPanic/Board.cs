@@ -43,7 +43,7 @@ namespace GalsPanic
             }
             ClaimedCount = 0;
 
-            _image = HiddenImage.Generate(width, height, seed);
+            _image = HiddenImage.ForStage(width, height, seed);
             _pixels = new Color32[width * height];
             _texture = new Texture2D(width, height, TextureFormat.RGBA32, false)
             {
